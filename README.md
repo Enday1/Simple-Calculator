@@ -1,2 +1,2 @@
 # Simple-Calculator
-A simple calculator for elementary computation.
+A simple calculator for elementary calculations.
