@@ -1,1 +1,33 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root {
+	-fx-background-color:blue;
+	
+}
+
+
+HBox {
+	/*affects spacing between items within the vbox */
+	-fx-spacing: 30px;
+	
+	
+}
+
+GridPane {
+	-fx-padding: 20px;
+	-fx-hgap: 35px;
+	-fx-vgap: 40px; 
+	
+}
+
+HBox > .button {  
+	-fx-text-fill: blue;
+	-fx-font-weight: bold;
+	-fx-background-color: white;
+	-fx-pref-width: 68px;
+}
+
+.redButtWhiteText {
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-color:#dc143c;
+}
