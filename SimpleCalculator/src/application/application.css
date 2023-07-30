@@ -31,3 +31,7 @@ HBox > .button {
 	-fx-font-weight: bold;
 	-fx-background-color:#dc143c;
 }
+
+.text-area *.text {
+    -fx-text-alignment: right;
+}
