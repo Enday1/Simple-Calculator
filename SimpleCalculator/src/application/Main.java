@@ -19,7 +19,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,400,500);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("TI-108");
+			primaryStage.setTitle("Texas Instruments TI-108");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
