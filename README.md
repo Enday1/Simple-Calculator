@@ -2,6 +2,7 @@
 A simple calculator for elementary calculations.
 
 Notes:
+
 The calculator does not follow the rules of "PEMDAS", meaning that calculations done on the calulator
 must be ordered sequentially.
 For Ex:
