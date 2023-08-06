@@ -2,6 +2,7 @@
 A simple calculator for elementary calculations.
 (Update: All issues in notes below should be resolved)
 
+
 Notes:
 
 The calculator does not follow the rules of "PEMDAS", meaning that calculations done on the calulator
