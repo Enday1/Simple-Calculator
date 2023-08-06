@@ -15,3 +15,6 @@ Calculator has some minor signage (+/-) issues. Thus, it is recommended that aft
 involving sign changes once the result is given, clear the data using the "ON/C" button.
 
 Calculations involving "-" (minus), and numbers with "." (decimals), may yield a result with multiple numbers after the decimal place.
+
+Update:
+All issues should be resolved.
