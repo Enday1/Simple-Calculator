@@ -728,6 +728,9 @@ public class Calculator {
 			}
 			
 			else if(calcInputs.lastIndexOf("+") >= 0 || calcInputs.lastIndexOf("-") >= 0 || calcInputs.lastIndexOf("*") >= 0 || calcInputs.lastIndexOf("/") >= 0) {
+				if(calcInputs.get(calcInputs.size() - 1).length() == 1 && !Character.isDigit(calcInputs.get(calcInputs.size() - 1).charAt(0))) {
+					return;
+				}
 				getFullNumber();
 			}
 			
@@ -1043,19 +1046,19 @@ public class Calculator {
 			calcInputs.clear();
 			calcInputs.add("0");
 			String strNum = "" +operands.get(0);
-			for(int i = 0; i < strNum.length(); i++) {
+			//for(int i = 0; i < strNum.length(); i++) {
 				//if(strNum.length() == 1) {
 					//calcInputs.add(strNum.substring(i));
 				//}
 				
 				//else {
-					calcInputs.add(strNum.substring(i, i + 1));
+					calcInputs.add(strNum);
 				//}
-			}
+			//}
 			
 			System.out.println("End:");
 			System.out.println(calcInputs.toString());
-			
+			System.out.println("\n");
 			
 		}
 	}
