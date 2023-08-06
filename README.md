@@ -1,6 +1,6 @@
 # Simple-Calculator
 A simple calculator for elementary calculations.
-
+(Update: All issues in notes below should be resolved)
 Notes:
 
 The calculator does not follow the rules of "PEMDAS", meaning that calculations done on the calulator
@@ -16,5 +16,4 @@ involving sign changes once the result is given, clear the data using the "ON/C"
 
 Calculations involving "-" (minus), and numbers with "." (decimals), may yield a result with multiple numbers after the decimal place.
 
-Update:
-All issues should be resolved.
+
