@@ -1,6 +1,6 @@
 # Simple-Calculator
 A simple calculator for elementary calculations.
-(Update: All issues in notes below should be resolved)
+(Update: the last two note items below should be resolved)
 
 
 Notes:
