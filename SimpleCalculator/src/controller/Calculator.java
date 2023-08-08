@@ -250,364 +250,111 @@ public class Calculator {
 		return false;
 	}
 	
+	private void ButtonEventHelper(String strNum) {
+		if (txaDisplay.getText().isEmpty()) {
+			calcInputs.clear();
+			return;
+		}
+		
+		if(elementSizeGreaterThanOne() == true) {
+			return;
+		}
+		
+		calcInputs.add(strNum);
+	
+		if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
+			txaDisplay.setText(strNum);
+		}
+					
+		else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
+			if(txaDisplay.getText().equals("0")) {
+				txaDisplay.clear();
+				
+				//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
+				if(calcInputs.size() >= 4) {
+					calcInputs.remove(calcInputs.size() - 2);	
+				}
+				
+			}
+			String msg = txaDisplay.getText() + strNum;
+			txaDisplay.setText(msg);
+		}
+		
+		
+		else {
+			txaDisplay.setText(strNum);
+		}
+	}
+	
 	private class ButtonOneEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strOne = "1";
-			calcInputs.add(strOne);
-		
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strOne);
-			}
-						
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "1";
-				txaDisplay.setText(msg);
-			}
-			
-			
-			else {
-				txaDisplay.setText(strOne);
-			}
+			String strNum = "1";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonTwoEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strTwo = "2";
-			calcInputs.add(strTwo);
-		
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strTwo);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "2";
-				txaDisplay.setText(msg);
-			}
-			
-			else {
-				txaDisplay.setText(strTwo);
-			}
+			String strNum = "2";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonThreeEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strThree = "3";
-			calcInputs.add(strThree);
-
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strThree);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "3";
-				txaDisplay.setText(msg);
-			}
-			
-		
-			else {
-				txaDisplay.setText(strThree);
-			}
+			String strNum = "3";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonFourEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strFour = "4";
-			calcInputs.add(strFour);
-			
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strFour);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "4";
-				txaDisplay.setText(msg);
-			}
-			
-			
-			else {
-				txaDisplay.setText(strFour);
-			}
+			String strNum = "4";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonFiveEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strFive = "5";
-			calcInputs.add(strFive);
-
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strFive);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "5";
-				txaDisplay.setText(msg);
-			}
-			
-			else {
-				txaDisplay.setText(strFive);
-			}
+			String strNum = "5";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonSixEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strSix = "6";
-			calcInputs.add(strSix);
-
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strSix);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "6";
-				txaDisplay.setText(msg);
-			}
-			
-			else {
-				txaDisplay.setText(strSix);
-			}
+			String strNum = "6";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonSevenEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strSeven = "7";
-			calcInputs.add(strSeven);
-			
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strSeven);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "7";
-				txaDisplay.setText(msg);
-			}
-			
-			else {
-				txaDisplay.setText(strSeven);
-			}
+			String strNum = "7";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonEightEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strEight = "8";
-			calcInputs.add(strEight);
-			
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strEight);
-			}
-			
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-				}
-				String msg = txaDisplay.getText() + "8";
-				txaDisplay.setText(msg);
-			}
-			
-			
-			else {
-				txaDisplay.setText(strEight);
-			}
+			String strNum = "8";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
 	private class ButtonNineEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(elementSizeGreaterThanOne() == true) {
-				return;
-			}
-			
-			String strNine = "9";
-			calcInputs.add(strNine);
-			
-
-			if(calcInputs.get(calcInputs.size() - 2).equals("+") || calcInputs.get(calcInputs.size() - 2).equals("-") || calcInputs.get(calcInputs.size() - 2).equals("*") || calcInputs.get(calcInputs.size() - 2).equals("/")) {
-				txaDisplay.setText(strNine);
-			}
-			
-			else if(!txaDisplay.getText().isEmpty() && txaDisplay.getText().length() >= 1 && calcInputs.size() >= 1) {
-				if(txaDisplay.getText().equals("0")) {
-					txaDisplay.clear();
-					txaDisplay.setText("9");
-					
-					//Takes away any 0 that appears in the array before a number without a decimal (ex: 09)
-					if(calcInputs.size() >= 4) {
-						calcInputs.remove(calcInputs.size() - 2);	
-					}
-					
-					return;
-				}
-				String msg = txaDisplay.getText() + "9";
-				txaDisplay.setText(msg);
-			}
-			
-			
-			else {
-				txaDisplay.setText(strNine);
-			}
+			String strNum = "9";
+			ButtonEventHelper(strNum);
 		}
 	}
 	
@@ -903,66 +650,47 @@ public class Calculator {
 	}
 	
 	
+	private void ButtonOperatorHelper(String operator) {
+		if (txaDisplay.getText().isEmpty()) {
+			calcInputs.clear();
+			return;
+		}
+		
+		if(calcInputs.get(calcInputs.size() - 1).equals("+") || calcInputs.get(calcInputs.size() - 1).equals("-") || calcInputs.get(calcInputs.size() - 1).equals("*") || calcInputs.get(calcInputs.size() - 1).equals("/")) {
+			return;
+		}
+		calcInputs.add(operator);
+	}
+	
 	private class ButtonPlusEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(calcInputs.get(calcInputs.size() - 1).equals("+") || calcInputs.get(calcInputs.size() - 1).equals("-") || calcInputs.get(calcInputs.size() - 1).equals("*") || calcInputs.get(calcInputs.size() - 1).equals("/")) {
-				return;
-			}
-			calcInputs.add("+");
+			String operator = "+";
+			ButtonOperatorHelper(operator);
 		}
 	}
 	
 	private class ButtonMinusEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(calcInputs.get(calcInputs.size() - 1).equals("+") || calcInputs.get(calcInputs.size() - 1).equals("-") || calcInputs.get(calcInputs.size() - 1).equals("*") || calcInputs.get(calcInputs.size() - 1).equals("/")) {
-				return;
-			}
-			
-			calcInputs.add("-");
+			String operator = "-";
+			ButtonOperatorHelper(operator);
 		}
 	}
 	
 	private class ButtonMultiplyEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-
-			if(calcInputs.get(calcInputs.size() - 1).equals("+") || calcInputs.get(calcInputs.size() - 1).equals("-") || calcInputs.get(calcInputs.size() - 1).equals("*") || calcInputs.get(calcInputs.size() - 1).equals("/")) {
-				return;
-			}
-			
-			calcInputs.add("*");	
+			String operator = "*";
+			ButtonOperatorHelper(operator);
 		}
 	}
 	
 	private class ButtonDivideEventHandler implements EventHandler<ActionEvent> {
 		@Override
 		public void handle(ActionEvent event) {
-			if (txaDisplay.getText().isEmpty()) {
-				calcInputs.clear();
-				return;
-			}
-			
-			if(calcInputs.get(calcInputs.size() - 1).equals("+") || calcInputs.get(calcInputs.size() - 1).equals("-") || calcInputs.get(calcInputs.size() - 1).equals("*") || calcInputs.get(calcInputs.size() - 1).equals("/")) {
-				return;
-			}
-			
-			calcInputs.add("/");	
+			String operator = "/";
+			ButtonOperatorHelper(operator);
 		}
 	}
 	
